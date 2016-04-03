@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <body>
+
+        <ui:composition template="./resources/plantilla.xhtml">
+
+            <ui:define name="cabecera">
+                
+            </ui:define>
+
+            <ui:define name="menu">
+                
+            </ui:define>
+
+            <ui:define name="content">
+                <h1>¿Está seguro de borrar el siguiente Turno?</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="ID" for="TID"/>
+                <h:outputText  value="#{bajaBean.turno.turId}" id="TID"/>
+
+                <h:outputLabel value="Fecha" for="Tfech"/>
+                <h:outputText  value="#{bajaBean.turno.turFecha}" id="Tfech"/>
+
+                <h:outputLabel value="Hora" for="Ths"/>
+                <h:outputText  value="#{bajaBean.turno.turHora}" id="Ths"/>
+
+                <h:outputLabel value="Minutos" for="TMin"/>
+                <h:outputText  value="#{bajaBean.turno.turMinutos}" id="TMin"/>
+
+                <h:outputLabel value="Mascota" for="TMasc"/>
+                <h:outputText  value="#{bajaBean.turno.turMascotaNombre}" id="TMasc"/>
+
+                <h:outputLabel value="Raza" for="TRaza"/>
+                <h:outputText  value="#{bajaBean.turno.turRaza}" id="TRaza"/>
+
+                <h:outputLabel value="Propietario" for="TProp"/>
+                <h:outputText  value="#{bajaBean.turno.turPropietario}" id="TProp"/>
+                
+                <h:outputLabel value="Banio" for="Tban"/>
+                <h:outputText  value="#{bajaBean.turno.turTipoBanio}" id="Tban"/>
+                
+                
+            </h:panelGrid>
+            <h:commandButton action="#{bajaBean.borrar()}" value="Aceptar"/>
+            <h:commandButton action="turnos" value="Cancelar" immediate="true"/>
+        </h:form>
+            </ui:define>
+
+            <ui:define name="pie"></ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

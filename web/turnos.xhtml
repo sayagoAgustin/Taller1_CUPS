@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./resources/plantilla.xhtml">
+
+            <ui:define name="cabecera">
+                cabecera
+            </ui:define>
+
+            <ui:define name="menu">
+                <li><h:commandLink action="newTurno" value="Nuevos Turnos"/></li>
+            </ui:define>
+
+            <ui:define name="content">
+                <h1>
+                    Listado de Medicamentos
+                </h1>
+                <h:dataTable value="#{beanListado.m}" var="tur" headerClass="linea" frame="border">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{tur.turId}"/>
+
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Fecha</f:facet>
+                        <h:outputText value="#{tur.turFecha}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Hora</f:facet>
+                        <h:outputText value="#{tur.turHora}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Minutos</f:facet>
+                        <h:outputText value="#{tur.turMinutos}">
+                        </h:outputText>                
+                    </h:column>               
+                    <h:column>
+                        <f:facet name="header">Nombre de mascota</f:facet>
+                        <h:outputText value="#{tur.turMascotaNombre}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Raza</f:facet>
+                        <h:outputText value="#{tur.turRaza}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Propietario</f:facet>
+                        <h:outputText value="#{tur.turPropietario}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Bañio</f:facet>
+                        <h:outputText value="#{tur.turTipoBanio}"/>
+                    </h:column>
+
+
+
+
+                    <h:column>
+
+                        <h:commandLink action="#{bajaBean.confirmar(tur)}" value="Borrar"/>
+                    </h:column>
+                </h:dataTable>
+            </ui:define>
+
+            <ui:define name="pie">
+                pie
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

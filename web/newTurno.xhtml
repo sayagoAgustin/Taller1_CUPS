@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./resources/plantilla.xhtml">
+
+            <ui:define name="cabecera"></ui:define>
+
+            <ui:define name="menu"></ui:define>
+
+            <ui:define name="content">
+
+                <h:form>
+
+                    <h:panelGrid columns="3">
+
+                        <h:outputLabel value="Mascota" for="turMascota"/>
+                        <h:inputText label="Mascota" value="#{altaBean.t.turMascotaNombre}" id="turMascota" required="true"/>
+                        <h:message for="turMascota"/>
+
+                        <h:outputLabel value="Raza" for="turRaza"/>
+                        <h:inputText label="Raza" value="#{altaBean.t.turRaza}" id="turRaza" required="true"/>
+                        <h:message for="turRaza"/>
+
+                        <h:outputLabel value="Propietario" for="turprop"/>
+                        <h:inputText label="Propietario" value="#{altaBean.t.turPropietario}" id="turprop" required="true"/>
+                        <h:message for="turprop"/>
+
+
+                        
+                        
+                        <h:outputLabel value="Banio" for="turBa"/>
+                        <h:selectOneMenu value="#{altaBean.t.turTipoBanio}" id="turBa" required="true">
+                            <f:selectItem itemValue="C" itemLabel="Comun"/>
+                            <f:selectItem itemValue="M" itemLabel="Medico" />
+                            <f:selectItem itemValue="P" itemLabel="Peluqueria" />
+                        </h:selectOneMenu>	
+                        <h:message for="turBa"/>
+
+                        <h:outputLabel value="Fecha" for="turFecha"/>
+                        <h:inputText label="Fecha" value="#{altaBean.t.turFecha}" id="turFecha" required="true"
+                                     ><f:convertDateTime pattern="dd-mm-yyyy"/> 
+                        </h:inputText>
+                        <h:message for="turFecha"/>
+
+                        <h:outputLabel value="Hora" for="tuHora"/>
+                        <h:inputText label="Hora" value="#{altaBean.t.turHora}" id="tuHora" required="true">
+                            <f:validateLongRange minimum="8" maximum="19"/>
+                        </h:inputText>
+                        <h:message for="tuHora"/>
+
+                        <h:outputLabel value="Minuto" for="turMinuto"/>
+                        <h:inputText label="Minuto" value="#{altaBean.t.turMinutos}" id="turMinuto" required="true">
+                            <f:validateLongRange minimum="0" maximum="30" />
+                        </h:inputText>
+                        <h:message for="turMinuto"/>
+
+                        <h:commandButton action="#{altaBean.insertar()}" value="Guardar"/>
+                        <h:commandButton action="turnos" value="Cancelar" immediate="true"/>
+                        
+                    </h:panelGrid>
+
+                </h:form>
+            </ui:define>
+
+            <ui:define name="pie"></ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

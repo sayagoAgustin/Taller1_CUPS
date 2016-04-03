@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-oct-2015 18:56:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Turnos" table="turnos" catalog="veterinaria" optimistic-lock="version">
+        <id name="turId" type="java.lang.Integer">
+            <column name="tur_id" />
+            <generator class="identity" />
+        </id>
+        <property name="turFecha" type="date">
+            <column name="tur_Fecha" length="10" not-null="true" />
+        </property>
+        <property name="turHora" type="java.lang.Integer">
+            <column name="tur_hora" />
+        </property>
+        <property name="turMinutos" type="java.lang.Integer">
+            <column name="tur_minutos" />
+        </property>
+        <property name="turMascotaNombre" type="string">
+            <column name="tur_mascotaNombre" length="30" />
+        </property>
+        <property name="turRaza" type="string">
+            <column name="tur_raza" length="40" />
+        </property>
+        <property name="turPropietario" type="string">
+            <column name="tur_propietario" length="30" />
+        </property>
+        <property name="turTipoBanio" type="java.lang.Character">
+            <column name="tur_tipoBanio" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>
