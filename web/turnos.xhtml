@@ -10,7 +10,7 @@
         <ui:composition template="./resources/plantilla.xhtml">
 
             <ui:define name="cabecera">
-                cabecera
+ 
             </ui:define>
 
             <ui:define name="menu">
@@ -21,6 +21,7 @@
                 <h1>
                     Listado de Medicamentos
                 </h1>
+                <!--
                 <h:dataTable value="#{beanListado.m}" var="tur" headerClass="linea" frame="border">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
@@ -65,6 +66,15 @@
                         <h:commandLink action="#{bajaBean.confirmar(tur)}" value="Borrar"/>
                     </h:column>
                 </h:dataTable>
+                -->
+                <ui:repeat value="#{beanListado.m}" var="tur">
+                    <a href="#"><div class="noseque">
+                        <h:outputText value="#{tur.turMascotaNombre}"/>  
+                    
+                    </div></a>
+                    
+                    
+                </ui:repeat>
             </ui:define>
 
             <ui:define name="pie">

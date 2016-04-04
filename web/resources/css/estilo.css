@@ -46,11 +46,14 @@ p{
     color : #33c;
 }
 #contenido{
+    
+    
     margin-left: 200px;
     padding-left: 15px;
     padding-bottom: 15px;
     padding-top: 15px;
     background-color: #cccccc;
+    overflow: hidden;
 }
 #bottom{
     text-align: center;
@@ -66,4 +69,18 @@ p{
 }
 .linea_vert{
     border-left: solid thin;
+}
+
+.noseque{
+    background: #33cc00;
+    margin: 0.5em;
+    width: 15%;
+   
+    float: left;
+    
+}
+
+a{
+    color: darkgreen;
+    
 }
